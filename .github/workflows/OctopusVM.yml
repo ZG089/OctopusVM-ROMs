@@ -1,0 +1,19 @@
+name: Build S24USpoofer App
+
+on:
+  workflow_dispatch
+
+jobs:
+  pre_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download & Release 
+      - name: Upload S24USpoofer App to Release
+        uses: softprops/action-gh-release@master
+        with:
+         files: |
+          /home/runner/work/S24USpoofer_LSPosed/S24USpoofer_LSPosed/app/build/outputs/apk/debug/S24USpoofer.apk
+         name: S24USpoofer LSPosed
+         tag_name: ${{ github.run_id }}
