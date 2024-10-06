@@ -1,0 +1,29 @@
+name: Download and Release OctopusVM IMGs & ISOs from Google Drive
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Required Packages & Download and Unzip Files
+        run: |
+         sudo apt update
+         sudo apt install python3
+         sudo apt install python3-pip
+         sudo apt install p7zip
+         mkdir OctopusVM
+         cd OctopusVM
+         gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
+         7z x *.7z
+         sudo rm -rf *.7z
+           
+      #- name: Upload Downloads Zip File to Release 
+      #  uses: softprops/action-gh-release@master
+     #   with:
+   #      files: |
+ #         /home/runner/work/mkbsd/mkbsd/downloads.zip
+#         name: MKBHD's "Panels" Wallpapers Upload 
+  #       tag_name: ${{ github.run_id }}
