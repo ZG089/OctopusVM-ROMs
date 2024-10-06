@@ -15,11 +15,12 @@ jobs:
          sudo apt install python3-pip
          sudo apt install p7zip
          pip install gdown
-      - name: Download and Unzip Win7Lite_X64
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
          7z x *.7z
          sudo rm -rf *.7z
-         
+         gdown https://drive.google.com/uc?id=1tigYqvdeW25nKNKJxyJ5ymydXCkkoJIS
+         unzip 8.1ultralite.zip
+         sudo rm -rf 8.1ultralite.zip
       #- name: Upload Downloads Zip File to Release 
       #  uses: softprops/action-gh-release@master
      #   with:
