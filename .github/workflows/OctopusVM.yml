@@ -36,16 +36,21 @@ jobs:
          unzip xpgameedition.zip
          sudo rm -rf xpgameedition.zip
          
+      - name: Create a tag
+        run: |
+          git tag v1.0.${{ github.run_id }}
+          git push origin v1.0.${{ github.run_id }}
+      
       - name: Upload ROMs to Releases
         uses: softprops/action-gh-release@master
         with:
-         files: |
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/7Lite_x64.vhd
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8.1ultralite.vmdk
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/win10-thin.vmdk
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
-          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk  
+          files: |
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/7Lite_x64.vhd
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8.1ultralite.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/win10-thin.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
           name: OctopusVM ROMs
-          tag_name: ${{ github.run_id }}
+          tag_name: v1.0.${{ github.run_id }}
