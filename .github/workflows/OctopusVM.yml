@@ -16,15 +16,34 @@ jobs:
          sudo apt install p7zip
          pip install gdown
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
-         7z x *.7z
-         sudo rm -rf *.7z
+         7z x 7Lite_x64.7z
+         sudo rm -rf 7Lite_x64.7z
          gdown https://drive.google.com/uc?id=1tigYqvdeW25nKNKJxyJ5ymydXCkkoJIS
          unzip 8.1ultralite.zip
          sudo rm -rf 8.1ultralite.zip
-      #- name: Upload Downloads Zip File to Release 
-      #  uses: softprops/action-gh-release@master
-     #   with:
-   #      files: |
- #         /home/runner/work/mkbsd/mkbsd/downloads.zip
-#         name: MKBHD's "Panels" Wallpapers Upload 
-  #       tag_name: ${{ github.run_id }}
+         gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
+         unzip 8liteOnoobe.zip
+         sudo rm -rf 8liteOnoobe.zip
+         gdown https://drive.google.com/uc?id=1wtI_JsE7-1NH012OaF1osffMWKnibxGp
+         unzip thpc.zip
+         mv thpc.vmdk win10-thin.vmdk
+         sudo rm -rf thpc.zip
+         gdown https://drive.google.com/uc?id=1fYmhMGi1oEF0bZ_nM9zySe0jWx1Nxlq-
+         7z x Win7x86SuperLitev5byZeli.7z
+         sudo rm -rf Win7x86SuperLitev5byZeli.7z
+         gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
+         unzip xpgameedition.zip
+         sudo rm -rf xpgameedition.zip
+         
+      - name: Upload ISOs & IMGs to Releases
+        uses: softprops/action-gh-release@master
+        with:
+         files: |
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/7Lite_x64.vhd
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/8.1ultralite.vmdk
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/8liteOnoobe.vmdk
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/2000.vmdk
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/win10-thin.vmdk
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/Win7x86SuperLitev5byZeli.vhd
+          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/xpgameedition.vmdk  
+          tag_name: ${{ github.run_id }}
