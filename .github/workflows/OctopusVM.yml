@@ -1,4 +1,4 @@
-name: Download and Release OctopusVM IMGs & ISOs from Google Drive
+name: Release OctopusVM ROMs
 on:
   workflow_dispatch:
 
@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Install Required Packages & Download and Unzip ISOs and IMGs
+      - name: Install Required Packages & Download and Unzip ROMs
         run: |
          sudo apt update
          sudo apt install python3
@@ -36,15 +36,16 @@ jobs:
          unzip xpgameedition.zip
          sudo rm -rf xpgameedition.zip
          
-      - name: Upload ISOs & IMGs to Releases
+      - name: Upload ROMs to Releases
         uses: softprops/action-gh-release@master
         with:
          files: |
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/7Lite_x64.vhd
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/8.1ultralite.vmdk
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/8liteOnoobe.vmdk
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/2000.vmdk
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/win10-thin.vmdk
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/Win7x86SuperLitev5byZeli.vhd
-          /home/runner/work/OctopusVM_IMGs_ISOs/OctopusVM_IMGs_ISOs/xpgameedition.vmdk  
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/7Lite_x64.vhd
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8.1ultralite.vmdk
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/win10-thin.vmdk
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
+          /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk  
+          name: OctopusVM ROMs
           tag_name: ${{ github.run_id }}
