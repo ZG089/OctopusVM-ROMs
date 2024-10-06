@@ -10,7 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Required Packages
-      - run: sudo apt update && sudo apt install python 3 && sudo apt install python3-pip && pip install gdown
-      - name: Download Windows 8
-      - run: sudo apt update && sudo apt install python 3 && sudo apt install python3-pip && pip install gdown
-      
+      - run: sudo apt update && sudo apt install python3 && sudo apt install python3-pip && pip install gdown && sudo apt install p7zip
+      - name: Create OctopusVM Folder
+      - run: mkdir OctopusVM
+      - name: Download & Unzip Windows 7Lite x64
+      - run: cd OctopusVM && gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89 && 7z x *.7z && sudo rm -rf *.7z
