@@ -20,6 +20,7 @@ jobs:
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
          7z x *.7z
          sudo rm -rf *.7z
+         ls
            
       #- name: Upload Downloads Zip File to Release 
       #  uses: softprops/action-gh-release@master
