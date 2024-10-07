@@ -52,7 +52,7 @@ jobs:
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
           name: OctopusVM ROMs
-          tag_name: v1.0
+          tag_name: ${{ github.run_id }}
           body: |
            - **Windows 7 Lite (x64)**
            - **Windows 8.1 Ultra Lite**
