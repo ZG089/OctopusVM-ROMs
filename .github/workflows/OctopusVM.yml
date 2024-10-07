@@ -1,4 +1,4 @@
-name: Release OctopusVM ROMs
+name: Download, Unzip, and Release OctopusVM ROMs
 on:
   workflow_dispatch:
 
