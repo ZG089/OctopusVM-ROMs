@@ -26,9 +26,7 @@ jobs:
          unzip 8liteOnoobe.zip
          sudo rm -rf 8liteOnoobe.zip
          gdown https://drive.google.com/uc?id=1wtI_JsE7-1NH012OaF1osffMWKnibxGp
-         unzip thpc.zip
-         mv thpc.vmdk win10-thin.vmdk
-         sudo rm -rf thpc.zip
+         mv thpc.zip Win10Thin.zip
          gdown https://drive.google.com/uc?id=1fYmhMGi1oEF0bZ_nM9zySe0jWx1Nxlq-
          7z x Win7x86SuperLitev5byZeli.7z
          sudo rm -rf Win7x86SuperLitev5byZeli.7z
@@ -49,8 +47,17 @@ jobs:
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8.1ultralite.vmdk
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/win10-thin.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win10Thin.zip
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
           name: OctopusVM ROMs
-          tag_name: v1.0.${{ github.run_id }}
+          tag_name: v1.0
+          body: |
+           - **Windows 7 Lite (x64)**
+           - **Windows 8.1 Ultra Lite**
+           - **Windows 8 Lite (NoOOBE Version)**
+           - **Windows 10 Thin**
+           - **Windows XP Game Edition**
+           - **Windows 2000**
+           - **Windows 7 Super Lite (x86)**
+           - **[*] Note: If you downloaded Windows 10 Thin don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
