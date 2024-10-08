@@ -26,9 +26,9 @@ This repository automates the process of **downloading**, **extracting**, **rena
 
 <!-- - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)** -->
 
-- **Kolibri Linux**
+<!-- - **Kolibri Linux**
 
-- **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest verison 15.0 soon for OctopusVM)**
+- **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest verison 15.0 soon for OctopusVM)** -->
 
 - **Linux Mint 10**
 
