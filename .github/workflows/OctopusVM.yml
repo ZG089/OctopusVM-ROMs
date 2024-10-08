@@ -1,14 +1,12 @@
 name: Download, Unzip, and Release OctopusVM ROMs
 on:
   workflow_dispatch:
-
 jobs:
   build:
     name: Download, Unzip, and Release OctopusVM ROMs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
       - name: Install Required Packages & Download and Unzip ROMs
         run: |
          sudo apt update
@@ -34,12 +32,27 @@ jobs:
          gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
          unzip xpgameedition.zip
          sudo rm -rf xpgameedition.zip
-         
+         gdown https://drive.google.com/uc?id=1rpmMShoZIkD6bpA0Bj3ZouwLMgimKluA
+         gdown https://drive.google.com/uc?id=1kjrYkt6pOpgtUE3vlSnmI49wbCammcyk
+         wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
+         mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
+         gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
+         unzip linux.rar
+         sudo rm -rf linux.rar
+         mv linux.vdi LinuxMint10.vdi
+         gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
+         gdown https://drive.google.com/uc?id=1WsDU5f4emQOwAwiHfG1YiDJsbilLyIkj
+         mv minimal linux_2.vmdk AlpineLinux-x86_Xfce4.vmdk
+         gdown https://drive.google.com/uc?id=1r5FPZU3_maX06EaMRrW28NJ-5W-seRYa
+         gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
+         unzip rubuntu.zip
+         sudo rm -rf rubuntu.zip
+         mv rubuntu.vmdk Rubuntu-v10.04-Lite_x86.vmdk
+         gdown https://drive.google.com/uc?export=download&id=1Jg8GlWxhXYWWUf5T_ORPtar3V9Oqnz7v
       - name: Create a tag
         run: |
           git tag v1.0.${{ github.run_id }}
           git push origin v1.0.${{ github.run_id }}
-      
       - name: Upload ROMs to Releases
         uses: softprops/action-gh-release@master
         with:
@@ -51,6 +64,15 @@ jobs:
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win10Thin.zip
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/archlinux-2017.08.01-x86_64.iso
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/kolibri.iso
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/TinyCoreLinux-Plus_v14.0.iso
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/LinuxMint10.vdi
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/lubuntu-18.04-alternate-amd64.iso
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/AlpineLinux-x86_Xfce4.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/RedHatLinux_by_denitpro.zip
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Rubuntu-v10.04-Lite_x86.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/TinyCore-12.0.iso
           name: OctopusVM ROMs
           tag_name: ${{ github.run_id }}
           body: |
@@ -61,4 +83,13 @@ jobs:
            - **Windows XP Game Edition**
            - **Windows 2000**
            - **Windows 7 Super Lite (x86)**
-           - **[*] Note: If you downloaded Windows 10 Thin don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
+           - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **Kolibri Linux**
+           - **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest verison 15.0 soon for OctopusVM)**
+           - **Linux Mint 10**
+           - **Lubuntu 18.04 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **AlpineLinux x86 Xfce4**
+           - **RedHat Linux**
+           - **Rubuntu v10.04 Lite x86**
+           - **TinyCore v12.0 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
