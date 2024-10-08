@@ -24,7 +24,7 @@ This repository automates the process of **downloading**, **extracting**, **rena
 
 ## 🐧**Linux**:
 
-- **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
+<!-- - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)** -->
 
 - **Kolibri Linux**
 
