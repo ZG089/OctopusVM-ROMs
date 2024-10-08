@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Required Packages & Download and Unzip ROMs
+      - name: Install Required Packages & Download, Rename, and Unzip ROMs
         run: |
          sudo apt update
          sudo apt install python3
