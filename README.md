@@ -4,7 +4,7 @@ This repository automates the process of **downloading**, **extracting**, **rena
 
 ---
 
-## 💾 **Included ROMs**
+# 💾 Included ROMs
 
 ## 🪟 **Windows**: 
 
