@@ -22,12 +22,22 @@ Each workflow run creates a **new release** with a **unique tag**, based on the 
 The following ROMs are downloaded, processed, and made available as part of the release:
 
 - **Windows 7 Lite (x64)**
-- **Windows 8.1 Ultra Lite**
-- **Windows 8 Lite (No OOBE)**
-- **Windows 10 Thin**
-- **Windows XP Game Edition**
-- **Windows 2000**
-- **Windows 7 Super Lite (x86)**
+           - **Windows 8.1 Ultra Lite**
+           - **Windows 8 Lite (NoOOBE Version)**
+           - **Windows 10 Thin**
+           - **Windows XP Game Edition**
+           - **Windows 2000**
+           - **Windows 7 Super Lite (x86)**
+           - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **Kolibri Linux**
+           - **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest verison 15.0 soon for OctopusVM)**
+           - **Linux Mint 10**
+           - **Lubuntu 18.04 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **AlpineLinux x86 Xfce4**
+           - **RedHat Linux**
+           - **Rubuntu v10.04 Lite x86**
+           - **TinyCore v12.0 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+           - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
 
 ---
 
