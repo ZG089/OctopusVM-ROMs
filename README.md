@@ -43,25 +43,6 @@ The following ROMs are downloaded, processed, and made available as part of the 
 - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
 ---
 
-## ⚙️ **How It Works**
-
-This repository includes a **GitHub Actions** workflow that automates the complete ROM release process. Below is a detailed breakdown:
-
-1. **Triggering the Workflow**:
-   - The workflow can be triggered manually via the **GitHub UI** using the `workflow_dispatch` event.
-   
-2. **Installing Required Packages**:
-   - Necessary packages such as `gdown`, `7zip`, and `unzip` are installed to handle file downloads and extraction.
-
-3. **Downloading and Extracting ROM Files**:
-   - ROMs are downloaded from specified Google Drive URLs using `gdown`.
-   - The downloaded files are then extracted using **7z** or **unzip**, based on their format.
-
-4. **Uploading to GitHub Releases**:
-   - After processing, the ROM files are uploaded as assets to a **new GitHub release** using the `softprops/action-gh-release` action.
-
----
-
 ## 🚀 **Usage**
 
 ### **Manually Triggering the Workflow**
