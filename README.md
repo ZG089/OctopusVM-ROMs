@@ -50,5 +50,5 @@ The following ROMs are downloaded, processed, and made available as part of the 
 You can manually trigger the workflow to process and release the ROMs:
 
 1. Go to the **Actions** tab in your repository.
-2. Select the workflow named **"Release OctopusVM ROMs"**.
+2. Select the workflow named **"Download, Unzip, Rename, and Release OctopusVM ROMs"**.
 3. Click on **"Run workflow"** to initiate the process.
