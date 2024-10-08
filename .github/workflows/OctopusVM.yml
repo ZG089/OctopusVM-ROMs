@@ -13,6 +13,7 @@ jobs:
          sudo apt install python3
          sudo apt install python3-pip
          sudo apt install p7zip
+         sudo apt install unrar
          pip install gdown
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
          mv *.7z 7Litex64.7z
@@ -35,7 +36,7 @@ jobs:
          wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
          mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
          gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
-         unzip linux.rar
+         unrar x linux.rar
          sudo rm -rf linux.rar
          mv linux.vdi LinuxMint10.vdi
          gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
