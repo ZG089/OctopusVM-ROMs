@@ -32,7 +32,6 @@ jobs:
          gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
          unzip xpgameedition.zip
          sudo rm -rf xpgameedition.zip
-         gdown https://drive.google.com/uc?id=1kjrYkt6pOpgtUE3vlSnmI49wbCammcyk
          wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
          mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
          gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
