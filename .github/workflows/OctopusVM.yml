@@ -14,7 +14,11 @@ jobs:
          sudo apt install python3-pip
          sudo apt install p7zip
          sudo apt install unrar
+         sudo apt install xz-utils
          pip install gdown
+         gdown https://drive.google.com/uc?id=1KQ40YRY0p7o26uciknf9-mnq4h88uYKH
+         xz -d 2000.vmdk.xz
+         sudo rm -rf 2000.vmdk.xz
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
          mv *.7z 7Litex64.7z
          7z x 7Litex64.7z
@@ -43,11 +47,12 @@ jobs:
          gdown https://drive.google.com/uc?id=1WsDU5f4emQOwAwiHfG1YiDJsbilLyIkj
          mv minimal\ linux\ 2.vmdk AlpineLinux-x86_Xfce4.vmdk
          gdown https://drive.google.com/uc?id=1r5FPZU3_maX06EaMRrW28NJ-5W-seRYa
+         mv RedHatLinux\ by\ denitpro.zip RedHatLinux_by_denitpro.zip
          gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
          unzip rubuntu.zip
          sudo rm -rf rubuntu.zip
          mv rubuntu.vmdk Rubuntu-v10.04-Lite_x86.vmdk
-         gdown https://drive.google.com/uc?export=download&id=1Jg8GlWxhXYWWUf5T_ORPtar3V9Oqnz7v
+         gdown https://drive.google.com/uc?id=1Jg8GlWxhXYWWUf5T_ORPtar3V9Oqnz7v
       - name: Create a tag
         run: |
           git tag v1.0.${{ github.run_id }}
@@ -63,7 +68,6 @@ jobs:
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win10Thin.zip
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/archlinux-2017.08.01-x86_64.iso
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/kolibri.iso
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/TinyCoreLinux-Plus_v14.0.iso
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/LinuxMint10.vdi
