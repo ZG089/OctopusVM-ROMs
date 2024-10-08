@@ -41,7 +41,7 @@ jobs:
          mv linux.vdi LinuxMint10.vdi
          gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
          gdown https://drive.google.com/uc?id=1WsDU5f4emQOwAwiHfG1YiDJsbilLyIkj
-         mv minimal linux_2.vmdk AlpineLinux-x86_Xfce4.vmdk
+         mv minimal\ linux\ 2.vmdk AlpineLinux-x86_Xfce4.vmdk
          gdown https://drive.google.com/uc?id=1r5FPZU3_maX06EaMRrW28NJ-5W-seRYa
          gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
          unzip rubuntu.zip
