@@ -1,12 +1,12 @@
 # **OctopusVM ROMs**
 
-This repository automates the process of **downloading**, **extracting**, and **uploading** various ROMs OctopusVM as GitHub releases. It utilizes **Google Drive** as the source for the ROMs and leverages **GitHub Actions** to streamline the entire workflow.
+This repository automates the process of **downloading**, **extracting**, **renameing**, and **uploading** various ROMs OctopusVM as GitHub releases.
 
 ---
 
 ## 💾 **Included ROMs**
 
-The following ROMs are downloaded, processed, and made available as part of the release:
+## 🪟 **Windows**: 
 
 - **Windows 7 Lite (x64)**
 
@@ -21,6 +21,8 @@ The following ROMs are downloaded, processed, and made available as part of the 
 - **Windows 2000**
 
 - **Windows 7 Super Lite (x86)**
+
+## 🐧**Linux**:
 
 - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
 
@@ -40,7 +42,10 @@ The following ROMs are downloaded, processed, and made available as part of the 
 
 - **TinyCore v12.0 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
 
+---
+
 - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
+
 ---
 
 ## 🚀 **Usage**
