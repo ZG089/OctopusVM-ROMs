@@ -23,7 +23,7 @@ jobs:
          mv *.7z 7Litex64.7z
          7z x 7Litex64.7z
          sudo rm -rf 7Litex64.7z
-         gdown https://drive.google.com/uc?id=1tigYqvdeW25nKNKJxyJ5ymydXCkkoJIS
+         gdown https://drive.google.com/uc?id=15lSQezlQgwXwVvO0Z7P9vXioQ_bsPr
          unzip 8.1ultralite.zip
          sudo rm -rf 8.1ultralite.zip
          gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
