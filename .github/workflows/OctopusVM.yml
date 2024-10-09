@@ -16,7 +16,7 @@ jobs:
          sudo apt install unrar
          sudo apt install xz-utils
          pip install gdown
-         gdown https://drive.google.com/uc?id=1KQ40YRY0p7o26uciknf9-mnq4h88uYKH
+         gdown https://drive.google.com/uc?id=1jK8EBAsCngfRYmIG5ljidOH4unrtcEE9
          xz -d 2000.vmdk.xz
          sudo rm -rf 2000.vmdk.xz
          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
