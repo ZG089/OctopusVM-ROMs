@@ -23,9 +23,6 @@ jobs:
          mv *.7z 7Litex64.7z
          7z x 7Litex64.7z
          sudo rm -rf 7Litex64.7z
-         gdown https://drive.google.com/uc?id=15lSQezlQgwXwVvO0Z7P9vXioQ_bsPr
-         unzip 8.1ultralite.zip
-         sudo rm -rf 8.1ultralite.zip
          gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
          unzip 8liteOnoobe.zip
          sudo rm -rf 8liteOnoobe.zip
@@ -62,7 +59,6 @@ jobs:
         with:
           files: |
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/7Lite_x64.vhd
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8.1ultralite.vmdk
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
             /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win10Thin.zip
