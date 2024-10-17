@@ -4,7 +4,7 @@ on:
 jobs:
   build:
     name: Download, Unzip, Rename, and Release OctopusVM ROMs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Install Required Packages & Download, Rename, and Unzip ROMs
