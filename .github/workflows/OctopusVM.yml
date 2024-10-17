@@ -1,84 +1,100 @@
 name: Download, Unzip, Rename, and Release OctopusVM ROMs
+
 on:
   workflow_dispatch:
+
 jobs:
   build:
     name: Download, Unzip, Rename, and Release OctopusVM ROMs
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - name: Install Required Packages & Download, Rename, and Unzip ROMs
+      
+      - name: Install Required Packages
         run: |
-         sudo apt update
-         sudo apt install python3
-         sudo apt install python3-pip
-         sudo apt install p7zip
-         sudo apt install unrar
-         sudo apt install xz-utils
-         pip install gdown
-         gdown https://drive.google.com/uc?id=1H6eueWDsganNOoFoKfG8zmjPT9xt7QvR
-         xz -d 2000.vmdk.xz
-         sudo rm -rf 2000.vmdk.xz
-         gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
-         mv *.7z 7Litex64.7z
-         7z x 7Litex64.7z
-         sudo rm -rf 7Litex64.7z
-         gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
-         unzip 8liteOnoobe.zip
-         sudo rm -rf 8liteOnoobe.zip
-         gdown https://drive.google.com/uc?id=1wtI_JsE7-1NH012OaF1osffMWKnibxGp
-         mv thpc.zip Win10Thin.zip
-         gdown https://drive.google.com/uc?id=1fYmhMGi1oEF0bZ_nM9zySe0jWx1Nxlq-
-         7z x Win7x86SuperLitev5byZeli.7z
-         sudo rm -rf Win7x86SuperLitev5byZeli.7z
-         gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
-         unzip xpgameedition.zip
-         sudo rm -rf xpgameedition.zip
-         wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
-         mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
-         gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
-         unrar x linux.rar
-         sudo rm -rf linux.rar
-         mv linux.vdi LinuxMint10.vdi
-         gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
-         gdown https://drive.google.com/uc?id=1WsDU5f4emQOwAwiHfG1YiDJsbilLyIkj
-         mv minimal\ linux\ 2.vmdk AlpineLinux-x86_Xfce4.vmdk
-         gdown https://drive.google.com/uc?id=1r5FPZU3_maX06EaMRrW28NJ-5W-seRYa
-         mv RedHatLinux\ by\ denitpro.zip RedHatLinux_by_denitpro.zip
-         gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
-         unzip rubuntu.zip
-         sudo rm -rf rubuntu.zip
-         mv rubuntu.vmdk Rubuntu-v10.04-Lite_x86.vmdk
-         gdown https://drive.google.com/uc?id=1Jg8GlWxhXYWWUf5T_ORPtar3V9Oqnz7v
+          sudo apt update
+          sudo apt install -y python3 python3-pip p7zip-full unrar xz-utils wget
+          pip install gdown
+
+      - name: Create a download directory
+        run: mkdir -p downloaded_roms
+
+      - name: Download, Rename, and Unzip ROMs
+        run: |
+          cd downloaded_roms
+          
+          echo "Downloading ROMs..."
+          gdown https://drive.google.com/uc?id=1H6eueWDsganNOoFoKfG8zmjPT9xt7QvR
+          xz -d 2000.vmdk.xz || echo "Failed to decompress 2000.vmdk.xz"
+          
+          gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
+          mv *.7z 7Litex64.7z
+          7z x 7Litex64.7z || echo "Failed to extract 7Litex64.7z"
+
+          gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
+          unzip 8liteOnoobe.zip || echo "Failed to extract 8liteOnoobe.zip"
+          
+          gdown https://drive.google.com/uc?id=1wtI_JsE7-1NH012OaF1osffMWKnibxGp
+          mv thpc.zip Win10Thin.zip
+          
+          gdown https://drive.google.com/uc?id=1fYmhMGi1oEF0bZ_nM9zySe0jWx1Nxlq-
+          7z x Win7x86SuperLitev5byZeli.7z || echo "Failed to extract Win7x86SuperLitev5byZeli.7z"
+          
+          gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
+          unzip xpgameedition.zip || echo "Failed to extract xpgameedition.zip"
+          
+          wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
+          mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
+          
+          gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
+          unrar x linux.rar || echo "Failed to extract linux.rar"
+          mv linux.vdi LinuxMint10.vdi
+          
+          gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
+          
+          gdown https://drive.google.com/uc?id=1WsDU5f4emQOwAwiHfG1YiDJsbilLyIkj
+          mv minimal\ linux\ 2.vmdk AlpineLinux-x86_Xfce4.vmdk
+          
+          gdown https://drive.google.com/uc?id=1r5FPZU3_maX06EaMRrW28NJ-5W-seRYa
+          mv RedHatLinux\ by\ denitpro.zip RedHatLinux_by_denitpro.zip
+          
+          gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
+          unzip rubuntu.zip || echo "Failed to extract rubuntu.zip"
+          mv rubuntu.vmdk Rubuntu-v10.04-Lite_x86.vmdk
+
+      - name: List files before upload
+        run: ls -la downloaded_roms/
+
       - name: Create a tag
         run: |
           git tag ${{ github.run_id }}
           git push origin ${{ github.run_id }}
+
       - name: Upload ROMs to Releases
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v1
         with:
           files: |
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.vhd
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.zip
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.iso
-          name: OctopusVM ROMs
+            downloaded_roms/*.vhd
+            downloaded_roms/*.vmdk
+            downloaded_roms/*.zip
+            downloaded_roms/*.iso
           tag_name: ${{ github.run_id }}
+          release_name: OctopusVM ROMs
           body: |
-           - **Windows 7 Lite (x64)**
-           - **Windows 8.1 Ultra Lite**
-           - **Windows 8 Lite (NoOOBE Version)**
-           - **Windows 10 Thin**
-           - **Windows XP Game Edition**
-           - **Windows 2000**
-           - **Windows 7 Super Lite (x86)**
-           - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
-           - **Kolibri Linux**
-           - **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest verison 15.0 soon for OctopusVM)**
-           - **Linux Mint 10**
-           - **Lubuntu 18.04 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
-           - **AlpineLinux x86 Xfce4**
-           - **RedHat Linux**
-           - **Rubuntu v10.04 Lite x86**
-           - **TinyCore v12.0 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
-           - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder, If you downloaded it via 1DM, ADM, or any other Download Manager move it to Download Folder.**
+            - **Windows 7 Lite (x64)**
+            - **Windows 8.1 Ultra Lite**
+            - **Windows 8 Lite (NoOOBE Version)**
+            - **Windows 10 Thin**
+            - **Windows XP Game Edition**
+            - **Windows 2000**
+            - **Windows 7 Super Lite (x86)**
+            - **Arch Linux (non GUI / old version 2017 but still working well, Maybe will release the latest version soon for OctopusVM)**
+            - **Kolibri Linux**
+            - **TinyCoreLinux Plus v14.0, (old version but still working well, Maybe will release the latest version 15.0 soon for OctopusVM)**
+            - **Linux Mint 10**
+            - **Lubuntu 18.04 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+            - **AlpineLinux x86 Xfce4**
+            - **RedHat Linux**
+            - **Rubuntu v10.04 Lite x86**
+            - **TinyCore v12.0 (old version 2018 but still working well, Maybe will release the latest version soon for OctopusVM)**
+            - **Note: If you downloaded any zip file don't unzip it let OctopusVM unzip it, and let all the ROMs in the Download Folder. If you downloaded it via 1DM, ADM, or any other Download Manager, move it to the Download Folder.**
