@@ -58,19 +58,10 @@ jobs:
         uses: softprops/action-gh-release@master
         with:
           files: |
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/7Lite_x64.vhd
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/8liteOnoobe.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/2000.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win10Thin.zip
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Win7x86SuperLitev5byZeli.vhd
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/xpgameedition.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/TinyCoreLinux-Plus_v14.0.iso
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/LinuxMint10.vdi
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/lubuntu-18.04-alternate-amd64.iso
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/AlpineLinux-x86_Xfce4.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/RedHatLinux_by_denitpro.zip
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/Rubuntu-v10.04-Lite_x86.vmdk
-            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/TinyCore-12.0.iso
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.vhd
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.vmdk
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.zip
+            /home/runner/work/OctopusVM-ROMs/OctopusVM-ROMs/*.iso
           name: OctopusVM ROMs
           tag_name: ${{ github.run_id }}
           body: |
