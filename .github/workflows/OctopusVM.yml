@@ -68,6 +68,20 @@ jobs:
           unzip rubuntu.zip || echo "Failed to extract rubuntu.zip"
           rm -rf rubuntu.zip
 
+      - name: Check file sizes and split if necessary
+        run: |
+          cd downloaded_roms
+          for file in *.vhd; do
+            if [ -f "$file" ]; then
+              size=$(stat -c%s "$file")
+              if [ $size -gt 2147483648 ]; then  # Check if greater than 2 GiB
+                echo "Splitting $file..."
+                split -b 2G "$file" "${file}_part_"
+                rm -rf "$file"  # Remove original large file
+              fi
+            fi
+          done
+
       - name: List files before upload
         run: ls -la downloaded_roms/
 
