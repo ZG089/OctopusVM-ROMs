@@ -26,28 +26,34 @@ jobs:
           echo "Downloading ROMs..."
           gdown https://drive.google.com/uc?id=1H6eueWDsganNOoFoKfG8zmjPT9xt7QvR
           xz -d 2000.vmdk.xz || echo "Failed to decompress 2000.vmdk.xz"
+          rm -rf 2000.vmdk.xz
           
           gdown https://drive.google.com/uc?id=1I7R20dyf9uN7lk_uljHSTwd65oo6nC89
           mv *.7z 7Litex64.7z
           7z x 7Litex64.7z || echo "Failed to extract 7Litex64.7z"
+          rm -rf 7Litex64.7z
 
           gdown https://drive.google.com/uc?id=1z0TvhU25lyR7skDBZKH4sv6OAkxXaNdD
           unzip 8liteOnoobe.zip || echo "Failed to extract 8liteOnoobe.zip"
+          rm -rf 8liteOnoobe.zip
           
           gdown https://drive.google.com/uc?id=1wtI_JsE7-1NH012OaF1osffMWKnibxGp
           mv thpc.zip Win10Thin.zip
           
           gdown https://drive.google.com/uc?id=1fYmhMGi1oEF0bZ_nM9zySe0jWx1Nxlq-
           7z x Win7x86SuperLitev5byZeli.7z || echo "Failed to extract Win7x86SuperLitev5byZeli.7z"
-          
+          rm -rf Win7x86SuperLitev5byZeli.7z
+
           gdown https://drive.google.com/uc?id=1vNIiy8upRevZlRM43Etifky5A4_daK-h
           unzip xpgameedition.zip || echo "Failed to extract xpgameedition.zip"
+          rm -rf xpgameedition.zip
           
           wget http://tinycorelinux.net/14.x/x86/release/CorePlus-current.iso
           mv CorePlus-current.iso TinyCoreLinux-Plus_v14.0.iso
           
           gdown https://drive.google.com/uc?id=1hp1W4VLFePIpkPguDFVoLonvI-NJiw1D
           unrar x linux.rar || echo "Failed to extract linux.rar"
+          rm -rf linux.rar
           mv linux.vdi LinuxMint10.vdi
           
           gdown https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
@@ -60,7 +66,7 @@ jobs:
           
           gdown https://drive.google.com/uc?id=1Nc20bFDdqPAACC2gv8yWO6U8fHT8aY52
           unzip rubuntu.zip || echo "Failed to extract rubuntu.zip"
-          mv rubuntu.vmdk Rubuntu-v10.04-Lite_x86.vmdk
+          rm -rf rubuntu.zip
 
       - name: List files before upload
         run: ls -la downloaded_roms/
