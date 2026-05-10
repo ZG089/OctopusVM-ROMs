@@ -6,9 +6,9 @@ on:
 jobs:
   build:
     name: Download, Unzip, Rename, and Release OctopusVM ROMs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Install Required Packages
         run: |
@@ -91,7 +91,7 @@ jobs:
           git push origin ${{ github.run_id }}
 
       - name: Upload ROMs to Releases
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             downloaded_roms/*.vhd
